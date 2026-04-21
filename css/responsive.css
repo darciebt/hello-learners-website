@@ -68,6 +68,10 @@
   .facts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .flip-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ── Mobile ── */
@@ -158,5 +162,28 @@
 
   .hero__image-main {
     border-radius: var(--radius-lg);
+  }
+
+  .flip-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card {
+    height: 12rem;
+  }
+
+  .tabs {
+    gap: 0.375rem;
+  }
+
+  .tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .topic-nav {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }

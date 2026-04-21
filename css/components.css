@@ -969,3 +969,225 @@
   font-size: 0.875rem;
   color: var(--charcoal-60);
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LITERACY GUIDE — TABS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--charcoal-10);
+  background: white;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--charcoal-70);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.tab:hover {
+  border-color: var(--coral);
+  color: var(--charcoal);
+}
+
+.tab.active {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--cream);
+}
+
+.tab-panel {
+  display: none;
+  animation: tabFadeIn 0.3s ease;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LITERACY GUIDE — FLIP CARDS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.flip-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.flip-card {
+  perspective: 1000px;
+  height: 14rem;
+  cursor: pointer;
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s var(--ease-bounce);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card__front,
+.flip-card__back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flip-card__front {
+  background: var(--cream);
+  border: 2px solid var(--charcoal-10);
+  text-align: center;
+}
+
+.flip-card__front h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+
+.flip-card__front p {
+  font-size: 0.8125rem;
+  color: var(--charcoal-60);
+}
+
+.flip-card__back {
+  background: var(--coral);
+  color: var(--cream);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+.flip-card__back p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.flip-card__back .flip-card__hint {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   LITERACY GUIDE — TOPIC NAV & GUIDE CARDS
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.topic-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--charcoal-10);
+  margin-top: 4rem;
+}
+
+.topic-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--charcoal-70);
+  transition: color var(--duration-fast) ease;
+}
+
+.topic-nav__link:hover {
+  color: var(--coral);
+}
+
+.topic-nav__link--disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Guide hub cards */
+.guide-card {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--charcoal-10);
+  background: white;
+  transition: all var(--duration-fast) var(--ease-smooth);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guide-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--coral);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.guide-card__num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--charcoal-60);
+}
+
+.guide-card__title {
+  font-family: var(--font-headline);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.guide-card__desc {
+  font-size: 0.9375rem;
+  color: var(--charcoal-70);
+  line-height: 1.6;
+}
+
+.guide-card__arrow {
+  margin-top: auto;
+  color: var(--coral);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Concern banner (within topic pages) */
+.concern-banner {
+  background: var(--coral-05);
+  border: 1px solid var(--coral-20);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.concern-banner p {
+  color: var(--charcoal-80);
+  margin-bottom: 1rem;
+}
