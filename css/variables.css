@@ -1,0 +1,74 @@
+/* ==========================================================================
+   DESIGN TOKENS — "The Nurtured Narrative"
+   Source: Stitch project designMd + Playbook Homepage Tailwind config
+   ========================================================================== */
+
+:root {
+  /* ── Brand Colors ── */
+  --coral: #FF9068;
+  --marigold: #F9CE45;
+  --sky-blue: #97C0CE;
+  --mauve: #C4A0B0;
+  --warm-sand: #EEE8E0;
+  --cream: #F5F1EC;
+  --charcoal: #665E5C;
+
+  /* ── Color Variants (opacity) ── */
+  --coral-10: rgba(255, 144, 104, 0.1);
+  --coral-20: rgba(255, 144, 104, 0.2);
+  --coral-30: rgba(255, 144, 104, 0.3);
+  --coral-05: rgba(255, 144, 104, 0.05);
+  --marigold-10: rgba(249, 206, 69, 0.1);
+  --marigold-20: rgba(249, 206, 69, 0.2);
+  --marigold-30: rgba(249, 206, 69, 0.3);
+  --sky-blue-10: rgba(151, 192, 206, 0.1);
+  --sky-blue-20: rgba(151, 192, 206, 0.2);
+  --sky-blue-30: rgba(151, 192, 206, 0.3);
+  --mauve-10: rgba(196, 160, 176, 0.1);
+  --mauve-20: rgba(196, 160, 176, 0.2);
+  --mauve-30: rgba(196, 160, 176, 0.3);
+  --charcoal-90: rgba(102, 94, 92, 0.9);
+  --charcoal-80: rgba(102, 94, 92, 0.8);
+  --charcoal-70: rgba(102, 94, 92, 0.7);
+  --charcoal-60: rgba(102, 94, 92, 0.6);
+  --charcoal-20: rgba(102, 94, 92, 0.2);
+  --charcoal-10: rgba(102, 94, 92, 0.1);
+  --charcoal-05: rgba(102, 94, 92, 0.05);
+
+  /* ── Typography ── */
+  --font-headline: 'Newsreader', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* ── Spacing ── */
+  --section-py: 128px;
+  --section-px: 96px;
+  --section-px-mobile: 32px;
+  --max-width: 1536px;
+  --max-width-narrow: 768px;
+  --max-width-mid: 1024px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 2.5rem;
+  --radius-2xl: 3rem;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-card: 0px 20px 40px rgba(102, 94, 92, 0.06);
+  --shadow-card-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+  --shadow-btn: 0 10px 20px -8px rgba(255, 144, 104, 0.3);
+  --shadow-btn-hover: 0 15px 30px -10px rgba(102, 94, 92, 0.3);
+  --shadow-interactive: 0 40px 80px -20px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+
+  /* ── Transitions ── */
+  --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.3s;
+  --duration-med: 0.5s;
+  --duration-slow: 0.8s;
+}

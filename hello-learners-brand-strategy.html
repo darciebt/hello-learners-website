@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello Learners — Brand Strategy Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #FF9068;
+    --green-mid: #e8784e;
+    --green-light: #F9CE45;
+    --mustard: #97C0CE;
+    --mustard-light: #D8EDF3;
+    --pink: #C4A0B0;
+    --pink-light: #F5EDF1;
+    --blue: #97C0CE;
+    --coral: #FF9068;
+    --off-white: #FDF0E0;
+    --warm-white: #F9EDD4;
+    --ink: #1A1A18;
+    --ink-mid: #3D3D3A;
+    --ink-muted: #6B6B66;
+    --ink-faint: #9A9A94;
+    --rule: #E8D8C4;
+    --page-max: 860px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* COVER */
+  .cover {
+    background: var(--green-dark);
+    color: white;
+    padding: 80px 48px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(134,239,172,0.12);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 120px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(244,114,182,0.1);
+  }
+  .cover-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(38px, 6vw, 62px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: white;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: var(--green-light);
+  }
+  .cover-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .cover-meta-item {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+  }
+  .cover-meta-item strong {
+    display: block;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  /* NAV */
+  .toc {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--rule);
+    padding: 40px 48px;
+  }
+  .toc-inner {
+    max-width: var(--page-max);
+    margin: 0 auto;
+  }
+  .toc-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 20px;
+  }
+  .toc-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 8px 32px;
+    list-style: none;
+  }
+  .toc-list li {
+    font-size: 14px;
+    color: var(--ink-muted);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .toc-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    color: var(--green-dark);
+    font-size: 13px;
+    min-width: 22px;
+  }
+
+  /* MAIN */
+  main {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 64px 0 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    color: var(--green-dark);
+    opacity: 0.6;
+    min-width: 28px;
+  }
+  .section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin: 40px 0 12px;
+  }
+  h3:first-child { margin-top: 0; }
+
+  p { margin-bottom: 1.1em; color: var(--ink-mid); }
+  p:last-child { margin-bottom: 0; }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; }
+
+  /* CALLOUT BOXES */
+  .callout {
+    border-left: 3px solid var(--green-dark);
+    padding: 18px 22px;
+    background: rgba(29,107,90,0.04);
+    border-radius: 0 8px 8px 0;
+    margin: 28px 0;
+  }
+  .callout.pink { border-left-color: var(--pink); background: var(--pink-light); }
+  .callout.mustard { border-left-color: var(--mustard); background: rgba(160,139,0,0.05); }
+  .callout.coral { border-left-color: var(--coral); background: rgba(251,146,60,0.06); }
+  .callout-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+  }
+  .callout.pink .callout-label { color: #be185d; }
+  .callout.mustard .callout-label { color: var(--mustard); }
+  .callout.coral .callout-label { color: #c2410c; }
+  .callout p { font-size: 15px; }
+  .callout-headline {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.35;
+    margin-bottom: 0;
+  }
+
+  /* ICP CARDS */
+  .icp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .icp-card {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .icp-card.primary { border-top: 3px solid var(--green-dark); }
+  .icp-card.secondary { border-top: 3px solid var(--mustard); }
+  .icp-card.tertiary { border-top: 3px solid var(--pink); }
+  .icp-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .icp-card.primary .icp-badge { background: rgba(29,107,90,0.1); color: var(--green-dark); }
+  .icp-card.secondary .icp-badge { background: rgba(160,139,0,0.1); color: var(--mustard); }
+  .icp-card.tertiary .icp-badge { background: var(--pink-light); color: #be185d; }
+  .icp-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .icp-card p { font-size: 14px; margin-bottom: 0.7em; }
+  .icp-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  .icp-tag {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--warm-white);
+    color: var(--ink-muted);
+    border: 1px solid var(--rule);
+  }
+
+  /* AWARENESS LADDER */
+  .ladder {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 16px 0;
+  }
+  .rung {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--warm-white);
+    border: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  .rung.active {
+    background: rgba(29,107,90,0.07);
+    border-color: rgba(29,107,90,0.25);
+  }
+  .rung-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--rule);
+    flex-shrink: 0;
+  }
+  .rung.active .rung-dot { background: var(--green-dark); }
+  .rung-label { color: var(--ink-muted); }
+  .rung.active .rung-label { color: var(--ink); font-weight: 500; }
+
+  /* VOICE EXAMPLES */
+  .before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  @media (max-width: 600px) { .before-after { grid-template-columns: 1fr; } }
+  .ba-card {
+    padding: 18px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .ba-before {
+    background: rgba(239,68,68,0.05);
+    border: 1px solid rgba(239,68,68,0.15);
+  }
+  .ba-after {
+    background: rgba(29,107,90,0.05);
+    border: 1px solid rgba(29,107,90,0.2);
+  }
+  .ba-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .ba-before .ba-label { color: #b91c1c; }
+  .ba-after .ba-label { color: var(--green-dark); }
+  .ba-card p { color: var(--ink-mid); margin-bottom: 0; }
+
+  /* COLOUR SWATCHES */
+  .palette-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .swatch {
+    width: 72px;
+  }
+  .swatch-color {
+    height: 64px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .swatch-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+  }
+  .swatch-hex {
+    font-size: 11px;
+    color: var(--ink-faint);
+    display: block;
+  }
+
+  /* CTA / COPY RECS */
+  .copy-block {
+    background: white;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .copy-block-header {
+    padding: 12px 18px;
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--rule);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .copy-block-body {
+    padding: 20px 22px;
+  }
+  .copy-block-body p { font-size: 15px; }
+
+  /* GUIDELINES SUMMARY */
+  .guidelines {
+    background: var(--green-dark);
+    color: white;
+    border-radius: 16px;
+    padding: 40px 40px 36px;
+    margin-top: 24px;
+  }
+  .guidelines h3 {
+    color: var(--green-light);
+    margin-top: 28px;
+  }
+  .guidelines h3:first-child { margin-top: 0; }
+  .guidelines p { color: rgba(255,255,255,0.8); font-size: 14px; }
+  .guidelines strong { color: white; }
+  .g-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0;
+  }
+  @media (max-width: 560px) { .g-grid { grid-template-columns: 1fr; } }
+  .g-do, .g-dont {
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+  .g-do { background: rgba(134,239,172,0.12); border-left: 2px solid var(--green-light); color: rgba(255,255,255,0.85); }
+  .g-dont { background: rgba(251,146,60,0.1); border-left: 2px solid var(--coral); color: rgba(255,255,255,0.75); }
+  .g-do::before { content: 'DO  '; font-weight: 700; color: var(--green-light); letter-spacing: 0.05em; }
+  .g-dont::before { content: 'DON\'T  '; font-weight: 700; color: var(--coral); letter-spacing: 0.05em; }
+
+  .g-swatches { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+  .g-swatch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  .g-dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .g-swatch span { font-size: 12px; color: rgba(255,255,255,0.75); }
+
+  /* TYPOGRAPHY SAMPLE */
+  .type-sample {
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    min-width: 120px;
+  }
+  .type-example { color: var(--ink-mid); flex: 1; }
+
+  /* OBJECTIONS TABLE */
+  .obj-list { margin: 16px 0; }
+  .obj-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  .obj-item:last-child { border-bottom: none; }
+  .obj-q { color: var(--ink); font-weight: 500; }
+  .obj-a { color: var(--ink-muted); }
+  @media (max-width: 560px) { .obj-item { grid-template-columns: 1fr; } }
+
+  /* POSITIONING STATEMENT HIGHLIGHT */
+  .position-statement {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--green-dark);
+    border-left: 4px solid var(--green-dark);
+    padding: 20px 26px;
+    background: rgba(29,107,90,0.04);
+    border-radius: 0 10px 10px 0;
+    margin: 28px 0;
+    line-height: 1.45;
+  }
+
+  /* LITMUS TEST */
+  .litmus {
+    background: var(--ink);
+    color: white;
+    border-radius: 10px;
+    padding: 24px 26px;
+    margin: 24px 0;
+  }
+  .litmus-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--green-light);
+    margin-bottom: 10px;
+  }
+  .litmus p {
+    color: rgba(255,255,255,0.85);
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .cover { padding: 48px 24px 48px; }
+    main { padding: 0 24px 60px; }
+    .toc { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">Confidential Working Document</div>
+  <h1>Hello Learners<br><em>Brand Strategy</em></h1>
+  <p class="cover-sub">A complete positioning, identity, and conversion strategy for Hello Learners literacy program — Hello Kids Therapy Hub, North Melbourne</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Program</strong>Hello Learners</div>
+    <div class="cover-meta-item"><strong>Parent Brand</strong>Hello Kids Therapy Hub</div>
+    <div class="cover-meta-item"><strong>Market</strong>North Melbourne, VIC</div>
+    <div class="cover-meta-item"><strong>Document Type</strong>Full Brand Strategy</div>
+    <div class="cover-meta-item"><strong>Sections</strong>7 — Cover to Guidelines</div>
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <div class="toc-inner">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li><span class="toc-num">01</span>Strategic Positioning Audit</li>
+      <li><span class="toc-num">02</span>Ideal Customer Profile (Refined)</li>
+      <li><span class="toc-num">03</span>Naming & Tagline Review</li>
+      <li><span class="toc-num">04</span>Tone of Voice Guide</li>
+      <li><span class="toc-num">05</span>Visual Identity Direction</li>
+      <li><span class="toc-num">06</span>Conversion Copy Recommendations</li>
+      <li><span class="toc-num">07</span>Brand Guidelines Summary</li>
+    </ul>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main>
+
+<!-- SECTION 1 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>Strategic Positioning Audit</h2>
+  </div>
+
+  <h3>Is this a defensible, distinctive position?</h3>
+  <p>Yes — but only if it's communicated precisely. "Small group after-school literacy program run by speech pathologists" contains a genuinely defensible position, but as a descriptor it reads like a service listing rather than a strategic claim. The defensibility lies in two things that are rare in combination: the clinical credentials of the deliverers, and the group format that sits between individual therapy and classroom instruction. No Melbourne competitor currently claims both.</p>
+  <p>The truly distinctive element — the thing that competitors cannot easily replicate — is the speech pathology qualification. Tutors, reading recovery teachers, and learning support specialists are everywhere. Speech pathologists who deliver structured literacy programs in small groups are a genuinely scarcer proposition. This clinical pedigree should be doing far more strategic work than it currently is. Right now it reads as a credential ("run by speech pathologists"). It should read as an outcome promise ("this is why it actually works").</p>
+  <p>The group format of 2–4 children is also strategically underused. Small groups signal several things parents deeply want: affordability compared to 1:1 therapy, peer normalisation for children who feel shame about reading difficulties, and shared learning dynamics. None of the current positioning activates any of these.</p>
+  <p>The absence of a referral or diagnosis requirement is a genuine commercial differentiator. In a landscape where parents associate clinical care with bureaucratic gatekeeping — waiting lists, referrals, NDIS complexities — "no referral needed" is a relief signal that should be made more prominent, not buried in FAQs.</p>
+
+  <h3>Evaluating "Warm Expert" as a tone-of-voice label</h3>
+  <p>"Warm Expert" is a starting point, not a guide. Almost every allied health and education brand in Australia describes itself in these terms, or aspires to them. The problem is not that the label is wrong — it's that it provides no guardrails. A copywriter given "Warm Expert" could write almost anything and justify it. The label needs to be specified along two axes: what kind of warmth, and what kind of expertise.</p>
+  <p>The warmth of Hello Learners is not cheerful or upbeat. It's the warmth of a person who has sat across from worried parents before and knows exactly how to hold that worry without dismissing it. The expertise is not academic credentialism — it's clinical specificity translated into language parents can actually use. A more precise label would be:</p>
+
+  <div class="callout">
+    <div class="callout-label">Revised Tone Label</div>
+    <p class="callout-headline">"Calm Authority. The speech pathologist who explains things in a way that finally makes sense."</p>
+  </div>
+
+  <h3>The single most powerful positioning idea Hello Learners can own</h3>
+  <p>After reviewing the competitive landscape, one territory is genuinely unoccupied: the idea that reading difficulty is a clinical puzzle that most interventions don't have the training to solve — and that Hello Learners does. Competitors either speak about literacy in educational terms (tutors, programs, approaches) or in therapeutic terms (assessments, diagnoses, reports). Nobody is bridging the gap and saying: this is why a speech pathologist — specifically — is the right person for this.</p>
+
+  <div class="position-statement">Hello Learners is the only small group literacy program in Melbourne where every session is led by a qualified speech pathologist who understands why your child's brain is finding reading hard — and what to do about it.</div>
+
+  <h3>Positioning risks and weaknesses</h3>
+  <p><strong>Risk 1 — The credential trap.</strong> Leading with speech pathology qualifications can trigger a "this is therapy" association that some parents will resist. Parents of children without diagnoses may self-select out, believing Hello Learners isn't for them. The copy must explicitly name this ("no diagnosis needed, no referral required") and frame the SP credential as expertise, not clinical gatekeeping.</p>
+  <p><strong>Risk 2 — North Melbourne as a geographic constraint.</strong> The after-school, term-based format requires families to physically attend. North Melbourne has solid demographics but the positioning must speak clearly enough that word-of-mouth carries beyond the immediate suburb.</p>
+  <p><strong>Risk 3 — The hope/credibility balance.</strong> The current hero headline ("Reading is hard for them right now. It doesn't have to stay that way.") is emotionally resonant but makes no credibility claim. It could belong to any literacy product in the country, including apps and worksheets. The positioning needs to earn hope — not simply assert it.</p>
+  <p><strong>Risk 4 — Premium price signals without price transparency.</strong> SP-led programs will be priced above tutoring. The competitive analysis notes the category-wide weakness of price opacity. Hello Learners risks losing parents who assume it's out of reach without ever enquiring. Either publish pricing with context, or build more explicit value-framing before the CTA.</p>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Ideal Customer Profile (Refined)</h2>
+  </div>
+
+  <h3>Evaluating the two hypotheses</h3>
+  <p>The Profile 1 / Profile 4 framework is approximately right in its identification of awareness stages, but underspecifies the emotional and psychographic texture of each profile — and misses a third profile that is likely a significant converter in the North Melbourne market.</p>
+  <p>The core hypothesis — that Profile 4 (School-Prompted Parent) converts better than Profile 1 (Worried Observer) — is sound. External validation dramatically reduces the cognitive work required before a parent acts. However, treating Profile 1 purely as a content audience undersells the conversion opportunity. Profile 1 parents do convert, but only when given a low-stakes first step that doesn't require them to commit to a belief they're not yet ready to hold. The real gap in the current approach is that there is no bridge offer for Profile 1 — they are served content, then asked to enrol, with nothing in between.</p>
+
+  <div class="icp-grid">
+    <div class="icp-card primary">
+      <span class="icp-badge">Primary Converter</span>
+      <h4>The School-Prompted Parent</h4>
+      <p><strong>Demographics:</strong> Parent of a child in Years 1–4, typically 32–44, dual-income household, inner-to-middle Melbourne suburbs. May have a working knowledge of education but no background in literacy development or speech pathology.</p>
+      <p><strong>Psychographics:</strong> Action-oriented once validated. Experiences relief when given a concrete recommendation. Trusts professionals. May feel guilt about not having noticed sooner. Values efficiency — wants to find the right thing, not research forever.</p>
+      <div class="ladder">
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Unaware</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Problem Aware</span></div>
+        <div class="rung active"><div class="rung-dot"></div><span class="rung-label">Solution Aware ← enters here</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Product Aware</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Most Aware</span></div>
+      </div>
+      <p><strong>Primary emotional state:</strong> Anxious urgency with an undertow of guilt. The teacher's call or report has created a "we should have done something already" feeling. They are ready to act but nervous about choosing the wrong option.</p>
+      <p><strong>What they must believe before converting:</strong> That Hello Learners is credible (not a tutoring service dressed up), that it is the right intervention for their specific child's pattern of difficulty, and that the process of getting started is manageable.</p>
+      <div class="obj-list">
+        <div class="obj-item">
+          <div class="obj-q">"Is a speech pathologist the right kind of person for a reading problem?"</div>
+          <div class="obj-a">Answer: Yes — reading is fundamentally about language processing. SP is the most qualified profession for this.</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-q">"Will group sessions be effective if my child has specific needs?"</div>
+          <div class="obj-a">Answer: Groups of 2–4 are small enough to be highly individualised; peer learning is also clinically advantageous.</div>
+        </div>
+        <div class="obj-item">
+          <div class="obj-q">"What does this cost and is it worth it vs 1:1?"</div>
+          <div class="obj-a">Answer: Requires price context on the page. Note: this information gap is not available in the brief — flagged as a copy priority.</div>
+        </div>
+      </div>
+      <div class="icp-row">
+        <span class="icp-tag">Teacher-referred</span>
+        <span class="icp-tag">Ready to act</span>
+        <span class="icp-tag">Validates externally</span>
+      </div>
+    </div>
+
+    <div class="icp-card secondary">
+      <span class="icp-badge">Secondary / Bridge</span>
+      <h4>The Worried Observer</h4>
+      <p><strong>Demographics:</strong> Parent of a child in Prep–Year 3. Often a mother with higher-than-average health literacy who does her own research. Suburban professional, likely has encountered terms like "dyslexia" or "phonological awareness" via social media.</p>
+      <p><strong>Psychographics:</strong> Research-oriented, cautious about over-medicalising, conflicted between "all kids develop at different rates" and a nagging instinct that something is genuinely different. Prone to information-seeking without follow-through. Needs permission to act as much as she needs information.</p>
+      <div class="ladder">
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Unaware</span></div>
+        <div class="rung active"><div class="rung-dot"></div><span class="rung-label">Problem Aware ← enters here</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Solution Aware</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Product Aware</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Most Aware</span></div>
+      </div>
+      <p><strong>Primary emotional state:</strong> A background hum of worry that spikes at night, after a difficult homework session, or when she compares her child to peers. Emotionally ready to be told what to do but not yet ready to say out loud that there is "a problem."</p>
+      <p><strong>What they must believe before converting:</strong> That acting now is not premature. That seeking help doesn't mean labelling her child. That there is a low-stakes first step that doesn't require her to commit to the full intervention narrative.</p>
+      <div class="icp-row">
+        <span class="icp-tag">Late-night researcher</span>
+        <span class="icp-tag">Instagram audience</span>
+        <span class="icp-tag">Needs permission</span>
+      </div>
+    </div>
+
+    <div class="icp-card tertiary">
+      <span class="icp-badge">Emerging / Missed</span>
+      <h4>The Proactive Optimiser</h4>
+      <p><strong>Demographics:</strong> Parent of a Prep or Year 1 child. Professional household, North Melbourne or Fitzroy/Northcote environs. Has heard about the Science of Reading, may have read about phonics instruction in the media. Child is not struggling — or is only mildly behind — but this parent wants the best possible foundation.</p>
+      <p><strong>Psychographics:</strong> Views early intervention as investment, not treatment. Comfortable with professional services. Does not carry the shame or stigma of the other two profiles. High willingness to pay. Word-of-mouth evangelist if outcomes are good.</p>
+      <div class="ladder">
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Unaware</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Problem Aware</span></div>
+        <div class="rung active"><div class="rung-dot"></div><span class="rung-label">Solution Aware ← enters here</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Product Aware</span></div>
+        <div class="rung"><div class="rung-dot"></div><span class="rung-label">Most Aware</span></div>
+      </div>
+      <p><strong>Note:</strong> This profile is not currently addressed in Hello Learners copy. It may not be a strategic priority if waitlist management is a concern, but it represents a low-friction, high-LTV segment in the North Melbourne demographic. The "no diagnosis required" framing already accommodates this profile — it simply needs to be named explicitly.</p>
+      <div class="icp-row">
+        <span class="icp-tag">Prevention-minded</span>
+        <span class="icp-tag">High LTV</span>
+        <span class="icp-tag">Word-of-mouth potential</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout mustard">
+    <div class="callout-label">Recommendation</div>
+    <p><strong>Profile 4 (School-Prompted Parent) should drive all conversion copy.</strong> This profile is the most conversion-ready, most emotionally receptive to the clinical positioning, and most likely to follow through. Profile 1 should be served by a distinct content strategy and a bridge offer — a free resource, webinar, or checklist — that moves them toward product awareness without requiring the full enrolment commitment. Profile 3 (Proactive Optimiser) should be acknowledged rather than led with; a single line in the hero or a separate section can capture this segment without diluting the primary message.</p>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>Naming & Tagline Review</h2>
+  </div>
+
+  <h3>Does "Hello Learners" work strategically?</h3>
+  <p>"Hello Learners" is a warm, accessible name that does its most important job well: it does not pathologise the child. In a space where children are often labelled ("struggling readers", "kids with reading difficulties"), naming the child a Learner rather than a problem to be fixed is a small act of reframing with real psychological weight. The "Hello" prefix is friendly, approachable, and ties cleanly to the parent brand.</p>
+  <p>What the name does not do: it makes no implicit claim about outcome, method, or expertise. It could belong to a drop-in tutoring service or a school holiday program as easily as it belongs to a clinician-led literacy intervention. This is a mild strategic weakness but not a fatal one — the tagline and copy system must do the work of loading the name with meaning.</p>
+  <p>There is no compelling strategic case to rename the program. "Hello Learners" is near-locked for good reasons: it is warm, non-stigmatising, and already has brand recognition in its market. The recommendation is to retain it and build the brand meaning around it more deliberately.</p>
+
+  <h3>Brand tagline</h3>
+
+  <div class="callout">
+    <div class="callout-label">Recommended Tagline</div>
+    <p class="callout-headline">"Science of Reading. Delivered by speech pathologists."</p>
+  </div>
+
+  <p>This tagline works for three reasons. First, "Science of Reading" is a searchable, specific term that speaks directly to the education-literate parent demographic. It functions as a credentialing shorthand for anyone who has encountered it before, and as an intrigue signal for those who haven't. Second, "delivered by speech pathologists" answers the implicit question every parent has when they encounter a literacy program: who is actually teaching my child? Third, the pairing of these two phrases does implicit competitive work: most Science of Reading programs are delivered by teachers, tutors, or reading specialists. This tagline asserts that Hello Learners goes further.</p>
+
+  <p>A shorter alternative for space-constrained contexts (social bios, icons, etc.):</p>
+  <div class="callout pink">
+    <div class="callout-label">Short Form Tagline</div>
+    <p class="callout-headline">"Where language science meets reading confidence."</p>
+  </div>
+
+  <h3>Evaluating the current hero headline</h3>
+  <div class="copy-block">
+    <div class="copy-block-header">Current Hero Headline</div>
+    <div class="copy-block-body">
+      <p><em>"Reading is hard for them right now. It doesn't have to stay that way."</em></p>
+    </div>
+  </div>
+
+  <p>This headline is emotionally resonant and structurally sound — it names a pain and then pivots to hope. It is doing reasonable work for Profile 1 (Worried Observer) by meeting them in their emotional state. Its weakness is that for Profile 4 (School-Prompted Parent) — the primary converter — it is too soft. This parent already knows reading is hard. They have just been told so by a teacher. They do not need their pain named — they need confidence that they have found the right solution. The headline fails to differentiate, makes no claim about why this program specifically would work, and could appear on a reading app, a tutoring service, or a parenting blog.</p>
+
+  <p>Three alternative headlines, with rationale:</p>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Alternative 1 — Lead with Clinical Differentiation</div>
+    <div class="copy-block-body">
+      <p><strong>"Most reading programs teach your child to try harder. We teach their brain to read differently."</strong></p>
+      <p style="font-size:14px;color:var(--ink-muted);margin-top:8px;">Rationale: Directly positions against the generic "practice more" approach of tutoring and reading apps. The phrase "teach their brain" signals neuroscience and clinical specificity without jargon. Works best for Profile 4, who has already tried conventional support and is looking for something fundamentally different.</p>
+    </div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Alternative 2 — Lead with the SP Differentiator</div>
+    <div class="copy-block-body">
+      <p><strong>"Your child's reading difficulties are a language problem. We're speech pathologists — this is exactly what we do."</strong></p>
+      <p style="font-size:14px;color:var(--ink-muted);margin-top:8px;">Rationale: Educates the parent about the connection between speech pathology and reading in one sentence. Addresses the most common objection at the headline level. Confident without being arrogant. The phrase "this is exactly what we do" carries authority without chest-thumping. Best suited to audiences who have been told to see a speech pathologist but aren't sure why.</p>
+    </div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Alternative 3 — Lead with the Parent Feeling (Refined)</div>
+    <div class="copy-block-body">
+      <p><strong>"You've known something wasn't clicking. Now you've found the people who can tell you exactly why — and fix it."</strong></p>
+      <p style="font-size:14px;color:var(--ink-muted);margin-top:8px;">Rationale: Retains the emotional resonance of the current headline but adds a credibility claim ("tell you exactly why") and a confidence claim ("fix it"). The word "fix" is deliberately direct — it may need testing. Works for both Profile 1 and Profile 4. The phrase "the people who can" leans on implied expertise without credential-listing.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Recommendation</div>
+    <p><strong>Alternative 1 is the strongest choice for the primary converting ICP.</strong> It reframes the problem from "child isn't trying hard enough" to "the approach hasn't been right yet" — which is both clinically accurate and emotionally relieving for parents who have already tried worksheets, apps, and general tutoring without results. It makes a distinctive claim, earns the pivot to hope, and creates a clear "and here's who does this well" setup for the credentials section beneath it. If testing is possible, run A/B between Alternative 1 and the current headline with the primary ICP segment.</p>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2>Tone of Voice Guide</h2>
+  </div>
+
+  <h3>Brand voice in four words</h3>
+  <div class="callout">
+    <div class="callout-label">Voice Signature</div>
+    <p class="callout-headline">Specific. Calm. Honest. Hopeful.</p>
+  </div>
+
+  <p>Each word is load-bearing. <strong>Specific</strong> because generic literacy language has no differentiation power. <strong>Calm</strong> because parents arrive anxious — the brand should lower their cortisol, not spike it. <strong>Honest</strong> because the audience is research-literate and will disengage from oversell or clinical exaggeration. <strong>Hopeful</strong> because the entire service proposition rests on the idea that things can genuinely get better — but hope must be earned through specificity, not asserted through exclamation marks.</p>
+
+  <h3>What Hello Learners sounds like — and never sounds like</h3>
+
+  <p><strong>Hello Learners sounds like:</strong> a speech pathologist who has sat across from hundreds of families and developed the precise language that helps parents understand what's happening without overwhelming them. It uses plain terms for complex things. It acknowledges that waiting and watching is hard. It names the child's experience (the frustration, the avoidance, the effort that isn't translating) without catastrophising. It is confident about its expertise but not performatively credentialed. When it says something will help, it explains why — briefly, clearly, and without appeals to authority alone.</p>
+
+  <p><strong>Hello Learners never sounds like:</strong></p>
+  <ul style="margin: 12px 0 12px 24px; color: var(--ink-mid); line-height: 2;">
+    <li>A tutoring flyer. ("Fun, structured learning in a supportive environment!")</li>
+    <li>A clinical brochure. ("Evidence-based, multi-sensory, phonological processing interventions.")</li>
+    <li>A charity campaign. ("Every child deserves the chance to reach their potential.")</li>
+    <li>Cheerful wellness content. ("We love watching little readers grow! ✨")</li>
+    <li>Condescending parent education. ("Here's why phonics matters and what you can do at home.")</li>
+  </ul>
+
+  <h3>Before & after rewrites</h3>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-label">Before</div>
+      <p>"Hello Learners is an evidence-based small group literacy program delivered by qualified speech pathologists using structured literacy approaches grounded in the Science of Reading."</p>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-label">After</div>
+      <p>"Reading isn't just an education problem — it's a language processing problem. Which is exactly why our sessions are run by speech pathologists, not tutors."</p>
+    </div>
+  </div>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-label">Before</div>
+      <p>"Our warm, experienced team works with each child to build foundational literacy skills in a nurturing, small group environment."</p>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-label">After</div>
+      <p>"Groups of two to four children. That's small enough for your child to get genuine attention — and structured enough for us to track exactly where they're at each week."</p>
+    </div>
+  </div>
+
+  <div class="before-after">
+    <div class="ba-card ba-before">
+      <div class="ba-label">Before</div>
+      <p>"We believe every child can become a confident reader with the right support."</p>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-label">After</div>
+      <p>"Most children who struggle with reading aren't missing motivation — they're missing the right instruction. That's a fixable problem."</p>
+    </div>
+  </div>
+
+  <h3>Copywriter litmus test</h3>
+  <div class="litmus">
+    <div class="litmus-label">Before publishing, ask:</div>
+    <p>"Could a worried parent read this at 11pm, find it credible enough to trust, specific enough to act on, and calm enough to feel reassured rather than alarmed?"</p>
+  </div>
+  <p style="margin-top:16px;">If the answer to any part of that question is no — if the copy is too cheerful, too clinical, too vague, or too alarming — it needs reworking before it goes out.</p>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2>Visual Identity Direction</h2>
+  </div>
+
+  <h3>Approved colour palette</h3>
+  <p>The Hello Learners palette has been defined by the brand and works across all five colours with intention. Each colour has been chosen for a specific emotional and strategic role — not decoration. The palette as a whole achieves something rare: it is warm and energetic enough to feel approachable to children, while the balance of mauve and sky blue keeps it grounded and credible for parents. No single colour dominates; they work as a system.</p>
+
+  <h3>Colour system</h3>
+
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FF9068;"></div>
+      <span class="swatch-name">Coral</span>
+      <span class="swatch-hex">#FF9068</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F9CE45;"></div>
+      <span class="swatch-name">Marigold</span>
+      <span class="swatch-hex">#F9CE45</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#97C0CE;"></div>
+      <span class="swatch-name">Sky Blue</span>
+      <span class="swatch-hex">#97C0CE</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C4A0B0;"></div>
+      <span class="swatch-name">Mauve</span>
+      <span class="swatch-hex">#C4A0B0</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FDF0E0;"></div>
+      <span class="swatch-name">Cream</span>
+      <span class="swatch-hex">#FDF0E0</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1A1A18;"></div>
+      <span class="swatch-name">Ink</span>
+      <span class="swatch-hex">#1A1A18</span>
+    </div>
+  </div>
+
+  <p><strong>Coral (#FF9068) — Primary action colour.</strong> Leads with energy and warmth. Used for primary buttons, CTAs, key section labels, and any element that asks the parent to take a step. Approachable and action-oriented without being aggressive — it signals enthusiasm and care rather than urgency or pressure. This is the colour parents notice first.</p>
+  <p><strong>Marigold (#F9CE45) — Optimism and reward.</strong> Used for highlights, callout backgrounds, milestone signals, and decorative accents. It carries the emotional weight of celebration and progress — the colour of gold stars without being literal about it. Use it to mark moments of positivity: a child's win, a program benefit, a reassuring note. Never use it as a background for body text.</p>
+  <p><strong>Sky Blue (#97C0CE) — Credibility anchor.</strong> The quietest colour in the palette and strategically the most important. Used for secondary UI elements, informational callouts, the clinician section, and any context where the brand needs to signal calm professional expertise. Parents feel safe; children feel calm. This colour earns trust without demanding attention.</p>
+  <p><strong>Mauve (#C4A0B0) — Emotional depth.</strong> The most distinctive colour in the palette — nobody else in the Melbourne allied health space is using it. Used for testimonial backgrounds, nurturing copy contexts, and anywhere the brand needs to feel gentle and inclusive rather than energetic. It softens what could otherwise feel like a loud children's palette and makes it welcoming to parents specifically.</p>
+  <p><strong>Cream (#FDF0E0) — The foundation.</strong> The page background and base of the entire visual system. Warm, considered, and premium — it signals that Hello Learners is not a cheap tutoring service. All other colours are set against it. Never swap this for a cold white.</p>
+  <p><strong>Ink (#1A1A18) — Body copy and dark contexts.</strong> Used for all body text, headings in light sections, and dark background sections (hero, testimonials, footer). A near-black with slight warmth — it never reads as harsh against the cream base.</p>
+
+  <h3>Typography direction</h3>
+
+  <div class="type-sample">
+    <div class="type-row">
+      <div class="type-label">Display / Serif</div>
+      <div class="type-example" style="font-family:'Fraunces',serif;font-size:26px;font-weight:300;letter-spacing:-0.02em;">Fraunces — headlines and pull quotes</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Body / Sans</div>
+      <div class="type-example" style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:400;">DM Sans — body copy, UI, captions, forms</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Display Italic</div>
+      <div class="type-example" style="font-family:'Fraunces',serif;font-size:22px;font-style:italic;font-weight:300;color:#FF9068;">"Reading is finally clicking."</div>
+    </div>
+    <div class="type-row">
+      <div class="type-label">Label / Utility</div>
+      <div class="type-example" style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B66;">No diagnosis required · Term 3 Enrolments Open</div>
+    </div>
+  </div>
+
+  <p>The Fraunces/DM Sans pairing should be retained. Fraunces is doing critical brand work: its optical-size serif design reads as both warm and intelligent — neither decoratively playful nor clinically austere. Used at light weight in headlines, it signals that Hello Learners is a premium, considered brand. DM Sans provides the legibility and neutrality needed in body contexts without competing with Fraunces for attention.</p>
+  <p><strong>Use Fraunces for:</strong> hero headlines, section headings, pull quotes, testimonials, and any type element that carries emotional weight. Use the italic style liberally in quotes and key phrases — it is the brand's single most distinctive typographic gesture.</p>
+  <p><strong>Use DM Sans for:</strong> everything functional — body copy, captions, form labels, navigation, button text, FAQ text, pricing tables.</p>
+
+  <h3>Photography and imagery direction</h3>
+
+  <p><strong>The visual world of Hello Learners looks like:</strong> warm, natural light in a real clinical or educational setting. Children are engaged and concentrated — not posed grinning at a camera. The emotional quality is absorbed focus, not performed happiness. Adults in frame are beside children, at the same level, not towering over them. Textures are real: wooden tables, paper, pencils, physical books. Backgrounds are clean but not sterile. Colour grading is warm but unsaturated — think "golden hour reading nook", not "bright classroom of the future."</p>
+
+  <p><strong>The visual world of Hello Learners never looks like:</strong> stock library children in generic "learning" poses. Clipart or illustrated children on letter blocks. Highly saturated, cartoonishly bright palettes. Clinical settings that look like waiting rooms. Children who appear distressed, frustrated, or struggling (even though the program addresses real difficulty — the photography should capture the moment after the intervention, not before it). Images that look like they belong to a primary school newsletter or a tutoring app.</p>
+
+  <h3>Iconography and illustration direction</h3>
+  <p>If used, illustrations should be minimal and line-based — not character-led or kawaii-inflected. The illustration style that best serves Hello Learners is the kind seen in quality children's publishing: clean, intelligent, slightly textured, respectful of the child's intelligence. Think drawn diagrams of the reading process, simple icons for program structure (e.g., group size, session format), and playful but grounded spot illustrations. The full palette — Coral, Marigold, Sky Blue, Mauve, and Cream — provides a rich enough range for illustrative work. Coral and Marigold should lead in illustrations directed at children; Sky Blue and Mauve in illustrations or icons directed at parents. Never use all five colours in a single illustration — two to three at a time is the ceiling.</p>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>Conversion Copy Recommendations</h2>
+  </div>
+
+  <h3>Hero headline and supporting line</h3>
+  <p>As argued in Section 3, the current hero headline does not do enough for the primary converting ICP. The recommended replacement:</p>
+
+  <div class="callout">
+    <div class="callout-label">Recommended Hero Headline</div>
+    <p class="callout-headline">"Most reading programs teach your child to try harder. We teach their brain to read differently."</p>
+  </div>
+
+  <p><strong>Recommended supporting line (subheadline):</strong></p>
+  <div class="callout pink">
+    <div class="callout-label">Subheadline</div>
+    <p class="callout-headline" style="font-size:18px;">"Hello Learners is a term-based small group program led by qualified speech pathologists — and yes, that matters more than you think."</p>
+  </div>
+
+  <p>The subheadline does two things simultaneously: it delivers the core factual descriptor (term-based, small group, speech pathologists) and it acknowledges the implicit question (why does the SP qualification matter?) without answering it immediately — creating a scroll incentive.</p>
+
+  <h3>CTA evaluation — "Enrol This Term"</h3>
+  <p>"Enrol This Term" is a high-commitment CTA that asks a converting decision of parents who are often still in the consideration phase. For Profile 4 (School-Prompted Parent), it may work — they are already action-ready. For everyone else, it creates a choice between "enrol" and "leave", with nothing in between.</p>
+  <p>The recommendation is a two-CTA structure:</p>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Primary CTA — For conversion-ready parents</div>
+    <div class="copy-block-body">
+      <p><strong>"Check availability for this term →"</strong></p>
+      <p style="font-size:14px;color:var(--ink-muted);margin-top:8px;">This is lower commitment than "Enrol" — it's an availability check, not a purchase decision. It also signals scarcity ("this term") without being pushy. It leads naturally into an enquiry form or a phone call, which allows the clinicians to do the conversion work in a conversation rather than requiring the landing page to close the sale entirely.</p>
+    </div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Secondary CTA — For parents still in consideration</div>
+    <div class="copy-block-body">
+      <p><strong>"Not sure if Hello Learners is right for your child? Download our free checklist — the signs we look for in children who are ready to start." →</strong></p>
+      <p style="font-size:14px;color:var(--ink-muted);margin-top:8px;">This secondary CTA serves Profile 1 directly: it gives them a low-stakes action, a useful resource, and begins a relationship. It positions Hello Learners as genuinely helpful rather than purely commercial. The email capture enables a nurture sequence that can move parents from consideration to conversion over days or weeks. <em>Gap note: the specific content of this checklist would need to be developed by the clinical team — it should be clinically grounded, not generic.</em></p>
+    </div>
+  </div>
+
+  <h3>Three highest-leverage copy changes</h3>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Change 1 — The credentials section: reframe from CV to causation</div>
+    <div class="copy-block-body">
+      <p>The current credentials section lists qualifications. The highest-leverage change is replacing the "who we are" framing with a "why this works" framing. Instead of: <em>"Our team of AHPRA-registered speech pathologists have specialised training in..."</em> use: <em>"Reading is a language skill. Which means when it breaks down, the root cause is nearly always in how the brain processes language — not in how hard your child is working. Speech pathology is the profession that specialises in language processing. That's why our sessions look different to tutoring — and why the results tend to be, too."</em> This copy educates while simultaneously differentiating, and it treats the parent as intelligent rather than as someone who needs to be reassured by a badge of credentials.</p>
+    </div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Change 2 — The "no referral needed" statement: promote and expand</div>
+    <div class="copy-block-body">
+      <p>This is currently a buried detail. It should be a section in its own right, or at minimum a visually prominent callout. The copy should name the pain it solves: <em>"No referral. No diagnosis. No waitlist for an assessment before you can even get started. If you've noticed something is off with your child's reading, that's enough. Book a call with us and we'll figure out together whether Hello Learners is the right fit."</em> This copy directly addresses the primary friction point for parents who have been told "go get an assessment first" and found themselves 12 months into a waiting list with nothing changing.</p>
+    </div>
+  </div>
+
+  <div class="copy-block">
+    <div class="copy-block-header">Change 3 — Testimonials: specificity over sentiment</div>
+    <div class="copy-block-body">
+      <p>If testimonials are currently present or planned, the highest-leverage format is specific outcome testimonials rather than experience testimonials. <em>"Lovely staff, great atmosphere"</em> does almost no conversion work. <em>"After two terms, our daughter stopped saying she hated reading. Her Year 3 teacher commented on her progress without us asking."</em> — this is the kind of testimonial that moves a wavering parent. The specificity ("Year 3 teacher", "two terms", "without us asking") signals genuine outcome rather than polished marketing. <em>Gap note: actual testimonials are not available in the brief. If they exist, they should be reviewed and the most outcome-specific ones selected. If they don't yet exist, collecting them should be a priority before the next term intake.</em></p>
+    </div>
+  </div>
+
+  <h3>Sections doing more harm than good</h3>
+
+  <p><strong>Generic credentialing language.</strong> Any section that opens with "evidence-based", "qualified professionals", or "best practice" is doing harm through wasted attention. These phrases have been so overused across allied health that they register as filler, not proof. Every instance of these phrases should be replaced with a specific, falsifiable claim — the name of a methodology, a measurable outcome, a clinical rationale.</p>
+
+  <p><strong>Overly broad mission or values statements.</strong> Statements like "we believe every child deserves the chance to reach their full potential" compete with the positioning. The brand's positioning is specific and differentiated; these statements make it sound generic. They should be cut or replaced with a specific articulation of Hello Learners' clinical philosophy.</p>
+
+  <h3>Secondary CTA strategy</h3>
+  <p>The secondary CTA strategy should be built around a single, well-positioned lead magnet: a parent-facing resource (PDF checklist, short guide, or video) that educates about the reading-language connection and provides a self-assessment tool. This serves Profile 1 parents, begins a nurture relationship, and positions Hello Learners as a trusted authority before any commercial conversation begins. The resource should sit in the mid-page — not at the bottom as an afterthought — and be positioned as genuinely useful, not as a sales device. The copy around it should reflect the brand voice: specific, calm, honest.</p>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2>Brand Guidelines Summary</h2>
+  </div>
+
+  <p>The following is a single-reference brand guidelines summary that can be handed to designers, copywriters, and external collaborators.</p>
+
+  <div class="guidelines">
+    <h3>Positioning Statement</h3>
+    <p>Hello Learners is the only small group literacy program in Melbourne where every session is led by a qualified speech pathologist who understands why your child's brain is finding reading hard — and what to do about it. We work with primary school-aged children (no referral or diagnosis required) in groups of 2–4, term by term, grounded in the Science of Reading.</p>
+
+    <h3>Target Audience Summary</h3>
+    <p><strong>Primary converter:</strong> Parent of a child in Years 1–4, whose child's teacher has flagged reading concerns. Action-ready, validation-seeking, willing to pay for clinical expertise. Needs confidence, not reassurance.<br><br>
+    <strong>Secondary audience:</strong> Parent who has noticed reading difficulty independently but hasn't had it confirmed. Research-oriented, emotionally cautious. Needs a low-stakes first step and permission to act.<br><br>
+    <strong>Emerging segment:</strong> Proactive parent seeking the best possible literacy foundation for a Prep–Year 1 child. No stigma, high willingness to pay, strong word-of-mouth potential.</p>
+
+    <h3>Voice in Four Words</h3>
+    <p><strong>Specific. Calm. Honest. Hopeful.</strong></p>
+
+    <h3>Colour System</h3>
+    <div class="g-swatches">
+      <div class="g-swatch"><div class="g-dot" style="background:#FF9068;"></div><span>Coral #FF9068 — Primary action</span></div>
+      <div class="g-swatch"><div class="g-dot" style="background:#F9CE45;"></div><span>Marigold #F9CE45 — Optimism & reward</span></div>
+      <div class="g-swatch"><div class="g-dot" style="background:#97C0CE;"></div><span>Sky Blue #97C0CE — Credibility anchor</span></div>
+      <div class="g-swatch"><div class="g-dot" style="background:#C4A0B0;"></div><span>Mauve #C4A0B0 — Emotional depth</span></div>
+      <div class="g-swatch"><div class="g-dot" style="background:#FDF0E0; border:1px solid rgba(255,255,255,0.3);"></div><span>Cream #FDF0E0 — Background base</span></div>
+      <div class="g-swatch"><div class="g-dot" style="background:#1A1A18;"></div><span>Ink #1A1A18 — Body copy</span></div>
+    </div>
+
+    <h3>Typography</h3>
+    <p><strong>Headlines & Pull Quotes:</strong> Fraunces, Light (300), with italic as the key brand gesture.<br>
+    <strong>Body & UI:</strong> DM Sans, Regular (400) and Medium (500).<br>
+    <strong>Never use:</strong> Arial, Roboto, or system fonts in branded contexts.</p>
+
+    <h3>Photography Direction</h3>
+    <p><strong>Show:</strong> Warm natural light. Children absorbed in real tasks. Adults at child level. Physical materials — paper, books, pencils. Genuine focus, not posed happiness.<br>
+    <strong>Never show:</strong> Generic stock library children. Performative smiling at the camera. Clinical settings that read as sterile or medical. Images of frustration or struggle.</p>
+
+    <h3>Do and Don't Examples</h3>
+    <div class="g-grid">
+      <div class="g-do">Lead with what makes Hello Learners clinically different</div>
+      <div class="g-dont">Open with "evidence-based", "qualified", or "best practice"</div>
+      <div class="g-do">Name the parent's specific worry, then move to solution</div>
+      <div class="g-dont">Use generic motivational language ("every child can succeed")</div>
+      <div class="g-do">Use specific, falsifiable outcome language</div>
+      <div class="g-dont">Use aspirational vagueness ("unlocking potential")</div>
+      <div class="g-do">Offer a low-stakes first step alongside the enrolment CTA</div>
+      <div class="g-dont">Ask every visitor to enrol before they're ready</div>
+      <div class="g-do">Treat the SP credential as a reason, not a badge</div>
+      <div class="g-dont">List qualifications without explaining why they matter for reading</div>
+      <div class="g-do">Make "no referral needed" prominent and reassuring</div>
+      <div class="g-dont">Bury access information in FAQs or fine print</div>
+    </div>
+
+    <h3>Tagline</h3>
+    <p><strong>Full form:</strong> Science of Reading. Delivered by speech pathologists.<br>
+    <strong>Short form:</strong> Where language science meets reading confidence.</p>
+  </div>
+</div>
+
+</main>
+</body>
+</html>

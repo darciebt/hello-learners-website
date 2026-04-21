@@ -1,0 +1,79 @@
+/* ==========================================================================
+   ANIMATIONS — Scroll Reveals, Hover Effects, Keyframes
+   ========================================================================== */
+
+/* ── Marquee ── */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── Float ── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── Scroll Reveal: Fade Up ── */
+
+.reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--duration-slow) var(--ease-smooth);
+}
+
+.reveal-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scroll Reveal: Card ── */
+
+.reveal-card {
+  opacity: 0;
+  transform: translateY(40px) rotate(var(--rotation, 0deg));
+  transition: all 0.9s var(--ease-smooth);
+}
+
+.reveal-card.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--rotation, 0deg));
+}
+
+/* ── Pop-in cards ── */
+
+.pop-in-card {
+  opacity: 0;
+  transform: translateY(30px) rotate(4deg);
+  transition: all var(--duration-slow) var(--ease-bounce);
+}
+
+.pop-in-card:nth-child(even) {
+  transform: translateY(30px) rotate(-4deg);
+}
+
+.pop-in-card.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--rotation, 0deg));
+}
+
+.pop-in-card:hover {
+  transform: translateY(-8px) rotate(0deg) !important;
+  border-color: var(--charcoal-10);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ── Staggered delays ── */
+
+.delay-1 { transition-delay: 100ms; }
+.delay-2 { transition-delay: 200ms; }
+.delay-3 { transition-delay: 300ms; }
+.delay-4 { transition-delay: 400ms; }
+.delay-5 { transition-delay: 500ms; }
+.delay-6 { transition-delay: 600ms; }

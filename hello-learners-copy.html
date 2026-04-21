@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hello Learners — Small Group Literacy Program | North Melbourne</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Georgia, serif; font-size: 17px; line-height: 1.75; color: #111; background: #fff; max-width: 900px; margin: 0 auto; padding: 0 32px 80px; }
+nav { padding: 24px 0; border-bottom: 1px solid #ddd; margin-bottom: 64px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+nav a { color: #111; text-decoration: none; font-size: 15px; font-family: Arial, sans-serif; }
+.nav-logo { font-size: 16px; font-weight: bold; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-cta { display: flex; gap: 12px; }
+.btn { border: 1px solid #111; padding: 8px 18px; font-size: 14px; font-family: Arial, sans-serif; color: #111; text-decoration: none; }
+.btn-primary { background: #111; color: #fff; }
+section { padding: 64px 0; border-bottom: 1px solid #eee; }
+section:last-of-type { border-bottom: none; }
+.section-label { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.18em; text-transform: uppercase; color: #666; margin-bottom: 12px; }
+h1 { font-size: 42px; font-weight: normal; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px; }
+h2 { font-size: 32px; font-weight: normal; line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 16px; }
+h3 { font-size: 22px; font-weight: normal; margin-bottom: 12px; }
+h4 { font-size: 16px; font-weight: bold; font-family: Arial, sans-serif; margin-bottom: 6px; }
+p { margin-bottom: 16px; color: #333; }
+p:last-child { margin-bottom: 0; }
+.lead { font-size: 19px; color: #444; margin-bottom: 24px; }
+.sub { font-size: 16px; color: #555; max-width: 560px; margin-bottom: 40px; }
+em { font-style: italic; }
+strong { font-weight: bold; color: #111; }
+ul { list-style: none; padding: 0; }
+li { padding: 14px 0; border-bottom: 1px solid #eee; font-size: 16px; color: #333; display: flex; gap: 12px; align-items: flex-start; }
+li:first-child { border-top: 1px solid #eee; }
+li::before { content: '→'; color: #999; flex-shrink: 0; margin-top: 1px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+.four-col { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 32px; }
+.card { border: 1px solid #ddd; padding: 28px; }
+.callout { border-left: 3px solid #111; padding: 16px 20px; background: #f9f9f9; margin: 24px 0; }
+.callout p { color: #333; font-style: italic; margin: 0; }
+.facts-row { display: flex; gap: 32px; flex-wrap: wrap; border-top: 1px solid #eee; padding-top: 24px; margin-top: 24px; }
+.fact { flex: 1; min-width: 120px; }
+.fact-label { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.12em; text-transform: uppercase; color: #999; margin-bottom: 4px; }
+.fact-value { font-size: 16px; color: #111; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.step-num { font-size: 28px; font-weight: normal; color: #ccc; margin-bottom: 12px; }
+.avatar { width: 56px; height: 56px; border-radius: 50%; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #666; margin-bottom: 14px; font-family: Arial, sans-serif; font-weight: bold; }
+.quals { font-family: Arial, sans-serif; font-size: 12px; color: #999; border-top: 1px solid #eee; margin-top: 14px; padding-top: 14px; }
+.close-line { font-style: italic; color: #555; margin-top: 24px; font-size: 18px; }
+.no-referral { border: 1px solid #111; padding: 24px 28px; margin-top: 24px; }
+.no-referral h4 { margin-bottom: 8px; font-size: 16px; }
+blockquote { border-left: 3px solid #ddd; padding: 20px 24px; margin: 0; }
+blockquote p { font-size: 18px; font-style: italic; color: #333; line-height: 1.75; margin-bottom: 14px; }
+.quote-attr { font-family: Arial, sans-serif; font-size: 13px; color: #777; font-style: normal; }
+.lead-strip { background: #f9f9f9; border: 1px solid #eee; padding: 32px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; margin: 0; }
+.lead-strip-text h3 { font-size: 20px; margin-bottom: 4px; }
+.lead-strip-text p { font-size: 15px; color: #555; margin: 0; }
+.lead-form { display: flex; gap: 10px; flex-shrink: 0; }
+input[type="email"] { font-family: Arial, sans-serif; font-size: 14px; padding: 10px 16px; border: 1px solid #ccc; width: 220px; outline: none; }
+button { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; padding: 10px 20px; background: #111; color: #fff; border: none; cursor: pointer; }
+.faq-item { border-bottom: 1px solid #eee; }
+.faq-q { padding: 20px 0; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #111; user-select: none; }
+.faq-q::after { content: '+'; font-size: 20px; color: #999; font-weight: normal; }
+.faq-item.open .faq-q::after { content: '×'; }
+.faq-a { font-size: 15px; color: #555; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; }
+.faq-item.open .faq-a { max-height: 400px; padding-bottom: 20px; }
+.cta-section { background: #111; color: #fff; padding: 64px 0; text-align: center; }
+.cta-section h2 { color: #fff; margin-bottom: 16px; }
+.cta-section p { color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 32px; }
+.cta-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
+.btn-white { background: #fff; color: #111; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; padding: 14px 32px; text-decoration: none; display: inline-block; }
+.btn-outline-white { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); font-family: Arial, sans-serif; font-size: 16px; padding: 14px 28px; text-decoration: none; display: inline-block; }
+.cta-note { font-family: Arial, sans-serif; font-size: 13px; color: rgba(255,255,255,0.4); }
+footer { padding: 48px 0 32px; border-top: 1px solid #eee; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+.footer-brand-name { font-size: 17px; margin-bottom: 4px; }
+.footer-brand-tag { font-style: italic; color: #888; font-size: 14px; margin-bottom: 12px; }
+.footer-brand-body { font-family: Arial, sans-serif; font-size: 13px; color: #888; line-height: 1.75; }
+.footer-col-head { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; letter-spacing: 0.14em; text-transform: uppercase; color: #bbb; margin-bottom: 14px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-links li { padding: 0; border: none; display: block; }
+.footer-links li::before { display: none; }
+.footer-links a { font-family: Arial, sans-serif; font-size: 14px; color: #888; text-decoration: none; }
+.footer-links a:hover { color: #111; }
+.footer-bottom { display: flex; justify-content: space-between; border-top: 1px solid #eee; padding-top: 20px; font-family: Arial, sans-serif; font-size: 12px; color: #bbb; flex-wrap: wrap; gap: 12px; }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { color: #bbb; text-decoration: none; }
+.placeholder-note { font-family: Arial, sans-serif; font-size: 12px; color: #f00; font-style: normal; }
+@media (max-width: 700px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 24px; }
+  .two-col, .three-col, .four-col, .steps { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .lead-strip { flex-direction: column; }
+  .lead-form { flex-direction: column; width: 100%; }
+  input[type="email"] { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Hello Kids Therapy Hub · Hello Learners</a>
+  <ul class="nav-links">
+    <li><a href="#program">The Program</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#team">Our Team</a></li>
+    <li><a href="#faq">FAQs</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="#faq" class="btn">Have a question?</a>
+    <a href="#closing" class="btn btn-primary">Check availability</a>
+  </div>
+</nav>
+
+<!-- 1. HERO -->
+<section id="top">
+  <div class="section-label">Introducing Hello Learners</div>
+  <h1>Most children who struggle with reading aren't missing effort. <em>They're missing the right kind of help.</em></h1>
+  <p class="lead">Hello Learners is a term-based small group literacy program led by <strong>qualified speech pathologists</strong> — in a setting where children quickly realise they're not the only one finding reading hard.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;">
+    <a href="#closing" class="btn btn-primary">Check availability this term</a>
+    <a href="#familiar" class="btn">Does this sound familiar?</a>
+  </div>
+  <div class="card" style="max-width:380px;">
+    <div class="section-label" style="margin-bottom:8px;">Why it works</div>
+    <p style="font-size:40px;line-height:1;margin-bottom:4px;font-weight:normal;">1 in 5</p>
+    <p style="font-size:14px;color:#555;margin-bottom:20px;">children experience difficulties with reading, writing or spelling — not signs of laziness or low intelligence.</p>
+    <ul style="border:none;">
+      <li style="border:none;padding:6px 0;font-size:14px;">Groups of 2–4 children only</li>
+      <li style="border:none;padding:6px 0;font-size:14px;">Every session led by a speech pathologist</li>
+      <li style="border:none;padding:6px 0;font-size:14px;">Science of Reading methodology</li>
+      <li style="border:none;padding:6px 0;font-size:14px;">No referral or diagnosis required</li>
+      <li style="border:none;padding:6px 0;font-size:14px;">After school, North Melbourne</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div style="padding:20px 0;border-bottom:1px solid #eee;border-top:1px solid #eee;display:flex;gap:32px;flex-wrap:wrap;font-family:Arial,sans-serif;font-size:13px;font-weight:500;color:#555;">
+  <span>Groups of 2–4 children</span>
+  <span>Qualified speech pathologists</span>
+  <span>Science of Reading</span>
+  <span>After school sessions</span>
+  <span>North Melbourne clinic</span>
+  <span>No referral needed</span>
+</div>
+
+<!-- 2. DOES THIS SOUND FAMILIAR -->
+<section id="familiar">
+  <div class="section-label">Does this sound familiar?</div>
+  <h2>You know something isn't quite clicking.</h2>
+  <p class="sub">It might not have a name yet. But you've noticed — and that instinct is worth taking seriously.</p>
+  <ul>
+    <li>Behind in reading and the gap keeps growing</li>
+    <li>Writing doesn't match how bright they clearly are</li>
+    <li>Spelling the same word a different way every time</li>
+    <li>Avoids reading aloud — or avoids it altogether</li>
+    <li>Frustrated at school when they're genuinely trying</li>
+    <li>Teachers have flagged concerns but haven't offered a clear path forward</li>
+    <li>You've Googled it at midnight and still don't know where to start</li>
+  </ul>
+  <p class="close-line">If any of this sounds like your child, Hello Learners was built for them.</p>
+</section>
+
+<!-- 3. PROGRAM + FIT -->
+<section id="program">
+  <div class="section-label">The program</div>
+  <h2>A program where kids make real progress — and feel good doing it.</h2>
+
+  <div style="border:1px solid #ddd;padding:40px;margin-bottom:24px;">
+    <h3 style="font-size:28px;margin-bottom:14px;">Hello Learners</h3>
+    <p>Our specialist after-school literacy program for primary school children who need extra support with reading, writing and spelling. Sessions run in small groups of 2–4 children, led by qualified speech pathologists who know how to make progress feel possible — and genuinely enjoyable.</p>
+    <p style="font-style:italic;color:#444;">Children work on real skills in a setting where they quickly realise something important: the other kids in the room are finding it hard too. That shift alone changes everything.</p>
+    <div class="callout">
+      <p>Reading is a language skill. Which means when it breaks down, the root cause is nearly always in how the brain processes language — not in how hard your child is working. Speech pathology is the profession that specialises in exactly this.</p>
+      <p style="margin-top:10px;">That's why our results tend to go further than tutoring.</p>
+    </div>
+    <div class="facts-row">
+      <div class="fact"><div class="fact-label">Group Size</div><div class="fact-value">2–4 children</div></div>
+      <div class="fact"><div class="fact-label">Timing</div><div class="fact-value">After school</div></div>
+      <div class="fact"><div class="fact-label">Structure</div><div class="fact-value">Term-based</div></div>
+      <div class="fact"><div class="fact-label">Focus</div><div class="fact-value">Reading, writing & spelling</div></div>
+      <div class="fact"><div class="fact-label">Location</div><div class="fact-value">North Melbourne</div></div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:48px;">Is it right for my child?</div>
+  <h2>Hello Learners is a good fit if your child:</h2>
+  <p class="sub">Not sure? We assess each child before the term starts — we'll tell you honestly whether the group is the right setting.</p>
+
+  <div class="two-col" style="margin-bottom:24px;">
+    <div class="card">
+      <h4>Is struggling with reading, writing or spelling</h4>
+      <p>At any level — whether just starting to fall behind or finding it hard for a while. Early or late, it's never the wrong time to start.</p>
+    </div>
+    <div class="card">
+      <h4>Is primary school age</h4>
+      <p>Hello Learners is designed for primary school children — approximately Years 1–6. Not sure if the age fits? Just ask us.</p>
+    </div>
+    <div class="card">
+      <h4>Would benefit from peer support</h4>
+      <p>Children who feel isolated by their difficulties often thrive in a small group where everyone is working on the same thing.</p>
+    </div>
+    <div class="card">
+      <h4>Doesn't have a diagnosis yet</h4>
+      <p>No referral or diagnosis needed to enrol. We assess each child at the start of term so we know exactly what they need.</p>
+    </div>
+  </div>
+
+  <div class="no-referral">
+    <h4>No referral. No diagnosis. No waitlist to begin.</h4>
+    <p>If you've noticed something is off with your child's reading, that's enough to reach out. No GP visit, no assessment first, no months on a waiting list before anything changes. We'll figure out together whether Hello Learners is the right fit — before you commit to anything.</p>
+  </div>
+</section>
+
+<!-- 4. HOW IT WORKS -->
+<section id="how">
+  <div class="section-label">How it works</div>
+  <h2>From first enquiry to first session — here's what to expect.</h2>
+  <p class="sub">We've made the getting-started part as simple as possible. You don't need to have everything figured out before you call.</p>
+  <div class="steps">
+    <div>
+      <div class="step-num">1</div>
+      <h4>Get in touch</h4>
+      <p>Drop us a message or give us a call. Tell us a little about your child and what you've noticed — we'll take it from there.</p>
+    </div>
+    <div>
+      <div class="step-num">2</div>
+      <h4>We assess your child</h4>
+      <p>Before the term begins, we do a short, child-friendly assessment so we understand exactly where your child is and how to best support them.</p>
+    </div>
+    <div>
+      <div class="step-num">3</div>
+      <h4>Hello Learners begins</h4>
+      <p>Your child joins a small group after school. Structured, evidence-based, led by a qualified speech pathologist — but it doesn't feel like school. That's the point.</p>
+    </div>
+    <div>
+      <div class="step-num">4</div>
+      <h4>You stay in the loop</h4>
+      <p>We update you throughout the term. At the end we'll talk through what's next — whether that's continuing, graduating, or something else entirely.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MEET THE CLINICIANS -->
+<section id="team">
+  <div class="section-label">Meet the clinicians</div>
+  <h2>The people running Hello Learners.</h2>
+  <p class="sub">Every session is led by a qualified speech pathologist — not a tutor, not a teacher's aide. Here's who your child will be working with.</p>
+  <div class="three-col">
+    <div class="card">
+      <div class="avatar">DM</div><!-- Replace with photo -->
+      <h3 style="font-size:20px;margin-bottom:4px;">Darcie Mitchell</h3>
+      <div class="section-label" style="margin-bottom:14px;">Speech Pathologist &amp; Director</div>
+      <p>Darcie founded Hello Kids Therapy Hub after years of working with children whose reading difficulties had gone unaddressed for too long. She runs Hello Learners because she knows the difference early, specific support makes — and she wants more children in North Melbourne to have access to it.</p>
+      <div class="quals">BSpPath (Hons) · AHPRA Registered · SPA Member · [X] years clinical experience</div>
+    </div>
+    <div class="card">
+      <div class="avatar">[I]</div><!-- Replace with photo -->
+      <h3 style="font-size:20px;margin-bottom:4px;">[Clinician Name]</h3>
+      <div class="section-label" style="margin-bottom:14px;">Speech Pathologist</div>
+      <p>[Name] has worked with primary school children with literacy difficulties for [X] years. [One sentence on their approach or what drives them.] [One sentence on their qualifications — conversational, not a CV line.]</p>
+      <div class="quals">[Qualifications] · AHPRA Registered · SPA Member</div>
+    </div>
+    <div class="card">
+      <div class="avatar">[I]</div><!-- Replace with photo -->
+      <h3 style="font-size:20px;margin-bottom:4px;">[Clinician Name]</h3>
+      <div class="section-label" style="margin-bottom:14px;">Speech Pathologist</div>
+      <p>[Name] has worked with primary school children with literacy difficulties for [X] years. [One sentence on their approach or what drives them.] [One sentence on their qualifications — conversational, not a CV line.]</p>
+      <div class="quals">[Qualifications] · AHPRA Registered · SPA Member</div>
+    </div>
+  </div>
+  <p style="text-align:center;font-style:italic;color:#666;margin-top:28px;font-size:16px;">Every clinician at Hello Kids is AHPRA-registered and a member of Speech Pathology Australia.</p>
+</section>
+
+<!-- 6. TESTIMONIALS -->
+<section>
+  <div class="section-label">What families are saying</div>
+  <h2>Results families actually notice.</h2>
+  <blockquote>
+    <p>By the end of Year 2, Liam's teacher had used the words "behind" and "struggling" so many times I'd stopped really hearing them. We'd tried the school reading program, extra homework, apps on the iPad — nothing stuck.<br><br>A friend mentioned Hello Kids and honestly I booked the consultation just to feel like I was doing something. The thing that surprised me most was how quickly Liam stopped dreading it. He came home after the second session and told me one of the other kids in the group had the exact same problem with the letter B as him. That was it — he was in. Six months later he reads to his little sister at bedtime. He asks to. That still gets me.</p>
+    <div class="quote-attr">— Priya, mum of Liam (age 8) · Kensington <span class="placeholder-note">· Placeholder — replace before launch</span></div>
+  </blockquote>
+</section>
+
+<!-- LEAD MAGNET -->
+<div class="lead-strip">
+  <div class="lead-strip-text">
+    <div class="section-label" style="margin-bottom:6px;">Free resource for parents</div>
+    <h3>Not sure if it's serious? Start here.</h3>
+    <p>Download our free checklist — the signs we look for in children who would benefit from Hello Learners. A good place to start if you're not quite sure what you're looking at yet.</p>
+  </div>
+  <div class="lead-form">
+    <input type="email" placeholder="Your email address">
+    <button>Send me the checklist</button>
+  </div>
+</div>
+
+<!-- 7. FAQ -->
+<section id="faq">
+  <div class="section-label">FAQs</div>
+  <h2>Questions we hear all the time</h2>
+  <div class="faq-item">
+    <div class="faq-q">Does my child need a diagnosis to join?</div>
+    <div class="faq-a">No. Many families come to us without any formal diagnosis — just a feeling that something isn't quite right. We assess each child before the term starts so we understand exactly how to support them in the group.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Why a speech pathologist — isn't this a tutor's job?</div>
+    <div class="faq-a">Reading is fundamentally a language skill — it requires the brain to map the sound structure of spoken language onto written symbols. When that process breaks down, the root cause is almost always in language processing. Speech pathology is the profession specifically trained to understand and treat language processing difficulties. That's why our results tend to go further than tutoring.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How long before we see results?</div>
+    <div class="faq-a">Most families notice meaningful change within the first term — in both skills and confidence. We track progress throughout and share that with you, so you're never left wondering how things are going.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">What if my child is shy or anxious about joining a group?</div>
+    <div class="faq-a">This comes up a lot. Groups of 2–4 children are small enough that most children settle quickly — especially once they realise the other kids are working through the same things. We're experienced at helping anxious children feel safe in the room.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Is Hello Learners covered by Medicare or NDIS?</div>
+    <div class="faq-a">Some of our services are eligible for Medicare rebates under a GP-referred care plan, and we are NDIS registered. We'll help you understand what funding may apply during your first conversation with us.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">When does the next term start?</div>
+    <div class="faq-a">Hello Learners runs each school term. Get in touch and we'll let you know when enrolments open — spots are limited so it's worth reaching out early.</div>
+  </div>
+</section>
+
+<!-- 8. CLOSING CTA -->
+<div class="cta-section" id="closing" style="margin:0 -32px;padding:64px 32px;">
+  <div class="section-label" style="color:rgba(255,255,255,0.5);justify-content:center;display:flex;margin-bottom:12px;">Term enrolments</div>
+  <h2>Spots in Hello Learners fill each term. Don't leave it too long.</h2>
+  <p>Get in touch today to find out when the next term starts and whether there's a spot for your child. The first conversation is free, relaxed, and genuinely useful — whether you enrol or not. No obligation, no pressure, no jargon.</p>
+  <div class="cta-btns">
+    <a href="tel:03XXXXXXXX" class="btn-white">Check availability this term</a>
+    <a href="mailto:hello@hellokidstherapy.com.au" class="btn-outline-white">Or email us a question</a>
+  </div>
+  <p class="cta-note">North Melbourne clinic · After school sessions · (03) XXXX XXXX <span class="placeholder-note">— replace before launch</span></p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Hello Kids Therapy Hub</div>
+      <div class="footer-brand-tag">Home of Hello Learners</div>
+      <p class="footer-brand-body">Small group literacy programs for primary school children.<br>North Melbourne, VIC.<br><br>Serving families across Yarraville, Kensington, Footscray, Parkville, Brunswick, Carlton, Ascot Vale, Moonee Ponds and Maribyrnong.</p>
+    </div>
+    <div>
+      <div class="footer-col-head">Programs</div>
+      <ul class="footer-links">
+        <li><a href="#program">Hello Learners</a></li>
+        <li><a href="#">1:1 Literacy Support</a></li>
+        <li><a href="#">Speech Pathology</a></li>
+        <li><a href="#">Assessment & Diagnosis</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-head">Clinic</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#closing">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Hello Kids Therapy Hub · North Melbourne VIC</span>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
