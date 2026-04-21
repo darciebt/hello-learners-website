@@ -82,4 +82,30 @@
       });
     });
   }
+
+  /* ── Literacy Guide Tabs ── */
+  document.querySelectorAll('.tabs').forEach((tabContainer) => {
+    const tabs = tabContainer.querySelectorAll('.tab');
+    const panelGroup = tabContainer.nextElementSibling;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        // Deactivate all tabs and panels in this group
+        tabs.forEach((t) => t.classList.remove('active'));
+        panelGroup.querySelectorAll('.tab-panel').forEach((p) => p.classList.remove('active'));
+
+        // Activate clicked tab and matching panel
+        tab.classList.add('active');
+        const target = panelGroup.querySelector('#' + tab.dataset.target);
+        if (target) target.classList.add('active');
+      });
+    });
+  });
+
+  /* ── Flip Cards ── */
+  document.querySelectorAll('.flip-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
 })();
