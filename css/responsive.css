@@ -224,6 +224,40 @@
   section .reveal-text[style*="padding: 3rem 6rem"] {
     padding: 2rem !important;
   }
+
+  /* Hero sections use inline padding-top: 16rem — way too much on mobile */
+  section[style*="padding-top: 16rem"] {
+    padding-top: 7rem !important;
+  }
+
+  /* Any inline 2-column grid collapses to single column */
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: 2fr 3fr"],
+  [style*="grid-template-columns: 3fr 2fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Floating rotated pull-quote cards (e.g. on Who we are) —
+     reposition inside parent and drop rotation so they don't overflow */
+  [style*="transform: rotate(3deg)"],
+  [style*="transform: rotate(-3deg)"] {
+    position: static !important;
+    max-width: 100% !important;
+    transform: none !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Hero h1 with clamp() still sometimes too large on narrow phones */
+  h1[style*="clamp(3rem"],
+  h1[style*="clamp(3.5rem"] {
+    font-size: 2.5rem !important;
+  }
+
+  /* Large inline font-size clamps on h2/display text */
+  h2[style*="clamp(2.5rem"] {
+    font-size: 2rem !important;
+  }
 }
 
 /* Global hard guard against horizontal overflow */
